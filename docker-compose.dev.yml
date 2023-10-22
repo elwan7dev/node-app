@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  node_application:
+    volumes:
+      - ./src:/app/src:ro
+    environment:
+      - NODE_ENV=development
