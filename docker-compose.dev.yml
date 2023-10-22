@@ -1,6 +1,9 @@
 version: '3.8'
 services:
   node_application:
+    build:
+      context: .
+      target: development
     volumes:
       - ./src:/app/src:ro
     environment:

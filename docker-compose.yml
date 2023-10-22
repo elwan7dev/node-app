@@ -1,9 +1,8 @@
 version: '3.8'
 # has common lines btw diff env
 services:
-  node_application:
+  node_application: 
     container_name: my-express-app-container
-    build: .
     ports:
       - "4000:4000"
     env_file:

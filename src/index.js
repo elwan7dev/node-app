@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 
 // first route
-app.get('/', (req, res) => res.send('<h1>Hello Elwan - test nodeMone !! hot test ---- test </h1>'));
+app.get('/', (req, res) => res.send('<h1>Hello Elwan -hi  </h1>'));
 
 
 // log
