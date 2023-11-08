@@ -59,7 +59,7 @@ docker compose build [OPTIONS] [SERVICE...]
 
 docker compose push [OPTIONS] [SERVICE...]
 
-# on server or any remote machine - no need to build image just pull from registery and run containers 
+### on server or any remote machine - no need to build image just pull from registery and run containers 
 docker compose pull [OPTIONS] [SERVICE...]
 .............. up -d 
 

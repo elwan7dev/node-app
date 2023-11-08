@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   node_application:
+    container_name: my-express-app-container
     build:
       context: .
       target: production
@@ -9,3 +10,13 @@ services:
   nginx:
     ports:
       - "80:80"
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_TRACE=true
+    command: --interval ${WATCHTOWER_POLL_INTERVAL} my-express-app-container
+
+
