@@ -2,7 +2,7 @@ const express = require('express');
 const res = require('express/lib/response');
 const mongoose = require('mongoose');
 const redis = require('redis')
-
+const os = require('os');
 
 // init app 
 const PORT = process.env.PORT || 4000;
@@ -32,7 +32,8 @@ redisClient.on('error', err => console.log('Redis Client Error', err))
 // first route
 app.get('/', (req, res) => {
     redisClient.set('products', 'products .....');
-    res.send('<h1>Hello Elwan - with Tresmerge</h1>');
+    console.log(`Traffic from ${os.hostname}`);
+    res.send('<h1>Hello Elwan - with Tresmerge and docker hub push image from local </h1>');
 });
 
 app.get('/data', async (req,res) => {

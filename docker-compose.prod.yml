@@ -6,3 +6,6 @@ services:
       target: production
     environment:
       - NODE_ENV=production
+  nginx:
+    ports:
+      - "80:80"

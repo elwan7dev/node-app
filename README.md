@@ -58,3 +58,16 @@ docker login -u <username>
 docker compose build [OPTIONS] [SERVICE...]
 
 docker compose push [OPTIONS] [SERVICE...]
+
+# on server or any remote machine - no need to build image just pull from registery and run containers 
+docker compose pull [OPTIONS] [SERVICE...]
+.............. up -d 
+
+## load Balancing
+- when scale your service can't use custom container name, ports
+```bash
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build --scale node_application=3
+
+service-name = node_application
+use --build flag to rebuild image
+```

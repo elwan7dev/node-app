@@ -8,3 +8,6 @@ services:
       - ./src:/app/src:ro
     environment:
       - NODE_ENV=development
+  nginx:
+    ports:
+      - "${NGINX_PORT}:80"
