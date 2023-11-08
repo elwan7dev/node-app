@@ -33,7 +33,7 @@ redisClient.on('error', err => console.log('Redis Client Error', err))
 app.get('/', (req, res) => {
     redisClient.set('products', 'products .....');
     console.log(`Traffic from ${os.hostname}`);
-    res.send('<h1>Hello Elwan - with Tresmerge and docker hub push image from local </h1>');
+    res.send('<h1>Hello Elwan - with watch tower and tresmerge </h1>');
 });
 
 app.get('/data', async (req,res) => {

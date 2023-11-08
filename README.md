@@ -56,8 +56,10 @@ install docker on ubuntu20 https://support.netfoundry.io/hc/en-us/articles/36005
 docker login -u <username>
 
 docker compose build [OPTIONS] [SERVICE...]
+`docker compose -f docker-compose.yml -f docker-compose.prod.yml build`
 
 docker compose push [OPTIONS] [SERVICE...]
+`docker compose -f docker-compose.yml -f docker-compose.prod.yml push node_application`
 
 ### on server or any remote machine - no need to build image just pull from registery and run containers 
 docker compose pull [OPTIONS] [SERVICE...]
@@ -65,9 +67,12 @@ docker compose pull [OPTIONS] [SERVICE...]
 
 ## load Balancing
 - when scale your service can't use custom container name, ports
-```bash
-docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build --scale node_application=3
-
+`docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build --scale node_application=3`
 service-name = node_application
 use --build flag to rebuild image
-```
+
+## Automate Deployment using watchtower
+by adding **--scale** flag with service name = # of contenders needed
+`docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build --scale node_application=3`
+note that:
+- this service can't have static container name or port
