@@ -3,6 +3,7 @@ version: '3.8'
 services:
   node_application: 
     container_name: my-express-app-container
+    image: elwan7dev/node-app
     ports:
       - "4000:4000"
     env_file:

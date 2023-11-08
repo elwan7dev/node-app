@@ -52,3 +52,9 @@ sudo chmod 400 ./path/for/file.pem
 ```
 install docker on ubuntu20 https://support.netfoundry.io/hc/en-us/articles/360057865692-Installing-Docker-and-docker-compose-for-Ubuntu-20-04
 
+## push images to docker hub
+docker login -u <username>
+
+docker compose build [OPTIONS] [SERVICE...]
+
+docker compose push [OPTIONS] [SERVICE...]
